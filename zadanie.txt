@@ -1,0 +1,78 @@
+
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <string>
+
+using namespace std;
+
+// Wypisywanie inta, stringa i floata
+template <typename T>
+void wypisz(T x)
+{
+    cout << x << endl;
+}
+
+// Wypisywanie vectora
+template <typename T>
+void wypisz(const vector<T>& v)
+{
+    for (auto x : v)
+        cout << x << " ";
+
+    cout << endl;
+}
+
+// Wypisywanie kolejki (int lub string)
+template <typename T>
+void wypisz(queue<T> q)
+{
+    while (!q.empty())
+    {
+        cout << q.front() << " ";
+        q.pop();
+    }
+
+    cout << endl;
+}
+
+int main()
+{
+    int a = 5;
+    string s = "Ala";
+    float f = 5.5;
+
+    vector<int> v = {1, 2, 3, 4};
+
+    // Kolejka intów
+    queue<int> q;
+    q.push(10);
+    q.push(20);
+    q.push(30);
+
+    // Kolejka stringów
+    queue<string> qs;
+    qs.push("Ala");
+    qs.push("ma");
+    qs.push("kota");
+
+    // Wypisywanie inta
+    cout<<"INT: "<<wypisz(a)<<end();
+
+    // Wypisywanie stringa
+    wypisz(s);
+
+    // Wypisywanie floata
+    wypisz(f);
+
+    // Wypisywanie vectora
+    wypisz(v);
+
+    // Wypisywanie kolejki intów
+    wypisz(q);
+
+    // Wypisywanie kolejki stringów
+    wypisz(qs);
+
+    return 0;
+}
